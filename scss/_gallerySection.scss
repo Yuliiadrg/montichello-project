@@ -1,0 +1,145 @@
+@use "variables";
+
+.gallery {
+  padding-top: 180px;
+  padding-bottom: 150px;
+
+  &-header {
+    @extend %header-section-dark;
+    position: relative;
+    text-align: center;
+    margin-bottom: 90px;
+    z-index: 10;
+    animation: gradient-animation 5s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100px;
+      border: 1px solid $text-color;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @keyframes gradient-animation {
+      0% {
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-image: linear-gradient(to right, $text-color, $bg-first);
+      }
+
+      100% {
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-image: linear-gradient(to right, $bg-first, $text-color);
+      }
+    }
+  }
+
+  &-list {
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "pic1 pic1 pic2 pic4"
+      "pic1 pic1 pic3 pic5";
+    gap: 10px;
+
+    &-img1 {
+      grid-area: pic1;
+    }
+
+    &-img2 {
+      grid-area: pic2;
+    }
+
+    &-img3 {
+      grid-area: pic3;
+    }
+
+    &-img4 {
+      grid-area: pic4;
+    }
+
+    &-img5 {
+      grid-area: pic5;
+    }
+
+    &-item {
+      cursor: pointer;
+      position: relative;
+
+      opacity: 0.6;
+
+      // &::after {
+      //   position: absolute;
+      //   content: '';
+      //   top: 0;
+      //   left: 0;
+      //   width: 100%;
+      //   height: 100%;
+      //   background: url(../images/loop.png);
+      //   background-repeat: no-repeat;
+      //   background-position: center;
+      //   opacity: 0;
+      // }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-button {
+    @extend %button;
+    display: block;
+    margin: auto;
+  }
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+
+
+
+  &-content {
+    margin: 50px;
+
+    & img {
+      max-width: 100%;
+
+      height: 550px;
+
+      margin: auto;
+      display: block;
+      padding: 10px;
+    }
+  }
+
+
+}
+
+
+.modal .close-btn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: $bg-color;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,72 @@
+@use "variables";
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+}
+
+footer,
+header,
+nav,
+section,
+main {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+input {
+    border-radius: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/*GENERAL STYLES:*/ * {
+  scroll-behavior: smooth;
+}
+
+.container {
+  padding: 0 15px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+a {
+  cursor: pointer;
+  outline: 0;
+}
+// SCROLLBAR
+

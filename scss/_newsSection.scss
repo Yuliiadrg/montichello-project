@@ -1,0 +1,182 @@
+@use "variables";
+
+.news {
+  padding-top: 150px;
+  padding-bottom: 120px;
+
+  background: url('../images/latestNewsBackground.jpg') no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-position: center;
+
+  &-header {
+    @extend %header-section-light;
+    position: relative;
+    text-align: center;
+    margin-bottom: 90px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100px;
+      border: 1px solid $bg-color;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &-wraper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 0px;
+
+
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      margin: -30px 0px 0px 0px;
+      z-index: 10;
+      font-size: 0;
+      width: 30px;
+      height: 60px;
+    }
+
+    .slick-slider {
+      min-width: 0;
+    }
+
+    .slick-list {
+      overflow: hidden;
+    }
+
+    .slick-track {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .slick-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: -40px;
+      gap: 40px;
+      width: 100%;
+      font-size: 0;
+
+      li {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        border: 1px solid $bg-color;
+        cursor: pointer;
+
+        &.slick-active {
+          background-color: $bg-color;
+        }
+      }
+    }
+
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 10;
+      font-size: 0;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .slick-arrow.slick-prev {
+      left: -60px;
+      background: url('../images/leftArrow.png') 0 0 / 100% no-repeat;
+    }
+
+    .slick-arrow.slick-next {
+      right: -60px;
+      background: url('../images/rightArrow.png') 0 0 / 100% no-repeat;
+    }
+
+  }
+}
+
+.slider {
+  &-news {
+    display: flex;
+    position: relative;
+
+    &-card {
+      width: 370px;
+      height: 520px;
+      background-color: $bg-color;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: rgba(32, 24, 143, 0.85) 0px 65px 35px -8px;
+      }
+    }
+
+    &-img {
+      max-width: 370px;
+      width: 100%;
+      max-height: 240px;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-container {
+    padding: 30px 20px;
+    height: 275px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &-title {
+    @extend %slider-header;
+    margin-bottom: 15px;
+  }
+
+  &-text {
+    font: $slider-text;
+    margin-bottom: 30px;
+    display: block;
+  }
+
+  &-autor {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+
+    &-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    &-name {
+      @extend %slider-author;
+      margin-bottom: 6px;
+    }
+
+    &-description {
+      @extend %slider-data;
+    }
+  }
+}

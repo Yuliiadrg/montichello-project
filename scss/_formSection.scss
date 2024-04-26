@@ -1,0 +1,104 @@
+@use "variables";
+.form {
+    max-width: 770px;
+    width: 100%;
+    max-height: fit-content;
+    padding: 90px 60px 60px 60px;
+    background: url('../images/formBg.jpg') no-repeat;
+    top: -310px;
+    margin: auto;
+    position: relative;
+    object-fit: cover;
+    background-position: center;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(.19, .64, .96, .41);
+  
+    &-header {
+      @extend %header-section-dark;
+      position: relative;
+      text-align: center;
+      margin-bottom: 42px;
+      z-index: 10;
+      animation: gradient-animation 5s ease-in-out;
+  
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100px;
+        border: 1px solid $text-color;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+  
+    }
+  
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      max-width: 300px;
+      font: $form-text;
+  
+      a {
+        &:hover {
+          text-decoration: underline;
+          color: $bg-second;
+        }
+      }
+    }
+  
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 45px;
+    }
+  
+    &-input {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 310px;
+      gap: 30px;
+      outline: none;
+  
+      .name,
+      .mail {
+        width: 100%;
+        font: $form-text;
+        padding: 5px 5px 10px 5px;
+        border-bottom: 1px solid $text-color;
+        outline: none;
+        background-color: $bg-color;
+  
+        &::placeholder {
+          color: #758497;
+          background-color: $bg-color;
+        }
+  
+        &:hover {
+          cursor: pointer;
+        }
+  
+        &:focus,
+        &:active {
+          border-bottom: 1px solid $text-button;
+          background-color: $bg-color;
+        }
+      }
+    }
+  
+    &-btn {
+      @extend %button-form;
+      display: block;
+  
+    }
+  
+    &-icon {
+      margin-right: 10px;
+      fill: $icon-color;
+      &:hover {
+        fill: $icon-color-hover;
+      }
+    }
+  
+  }

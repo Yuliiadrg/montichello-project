@@ -1,0 +1,106 @@
+@use "variables";
+
+%nav-header {
+  font: $nav-header;
+  color: $bg-color;
+  text-transform: uppercase;
+}
+
+%hero-header {
+  font: $hero-header;
+  color: $bg-color;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+%hero-text {
+  font: $hero-text;
+  color: $bg-color;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+%header-section-dark {
+  font: $header-section;
+  color: $text-color;
+  text-transform: uppercase;
+
+  &:hover {
+    background: linear-gradient(to right, rgba(34, 24, 227, 0.96), rgba(148, 20, 211, 0.758), rgba(240, 6, 131, 0.933));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: all 0.3s cubic-bezier(.19, .64, .96, .41);
+  }
+}
+
+%header-section-light {
+  font: $header-section;
+  color: $bg-color;
+  text-transform: uppercase;
+
+  &:hover {
+    background: linear-gradient( rgb(202, 241, 250), rgba(8, 158, 212, 0.921));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: all 0.3s cubic-bezier(.19, .64, .96, .41);
+  }
+}
+
+%sub-header {
+  font: $sub-header;
+  color: $text-color;
+  text-transform: uppercase;
+}
+
+%slider-header {
+  font: $slider-header;
+  color: $text-color;
+  text-transform: uppercase;
+}
+
+%slider-author {
+  font: $hero-text;
+  color: $text-color;
+  text-transform: uppercase;
+}
+
+%slider-data {
+  font: $text-button;
+  color: $bg-first;
+}
+
+
+%button {
+  font: $text-button;
+  text-transform: uppercase;
+  color: $text-color;
+  border: 1px solid $text-color;
+  background: transparent;
+  cursor: pointer;
+  padding: 16px 41px;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    color: $bg-color;
+    background: $text-color;
+  }
+}
+
+%button-form {
+  font: $form-text;
+  text-transform: uppercase;
+  color: $text-color;
+  border: 1px solid $text-color;
+  background: transparent;
+  cursor: pointer;
+  padding: 12px 34px;
+
+  &:hover,
+  &:focus {
+    color: $bg-color;
+    background: $text-color;
+  }
+}
